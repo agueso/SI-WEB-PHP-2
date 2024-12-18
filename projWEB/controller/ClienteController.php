@@ -15,6 +15,9 @@ public function __construct() {
 
 public function index() {
     //echo "oi";
+    $clientes = $this->cliente_dao->mostrar_tudo();
+    session_start();
+    $_SESSION['clientes'] = $clientes;
     header('Location: ./view/cliente/mostrar-tudo.php');
 }
 
